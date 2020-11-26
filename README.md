@@ -15,6 +15,7 @@ installFlipbook
 
 ### Using flipbook
 Write a code and save with extension `.flip` (say `myBook.flip`)
+
 **Syntax:**
 * First line shoud define the output format (`gif/pdf`).
 * Second line should define the canvas size [integers separated by space] (`<width> <height>`).
