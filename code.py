@@ -1,7 +1,8 @@
+import sys
 from fpdf import FPDF
 from PIL import Image
 
-f = open("book1.flip", "r")
+f = open(sys.argv[1], "r")
 form = f.readline().strip()
 dimPg = [int(i) for i in f.readline().strip().split(" ")]
 pgs = []
@@ -53,7 +54,7 @@ if form=='pdf':
 		for j in range(len(fName)):
 			if xS[j][i] != -1:
 				pdf.image(fName[j],xS[j][i],yS[j][i],dimImg[j][0],dimImg[j][1])
-	pdf.output("output.pdf", "F")
+	pdf.output(sys.argv[2], "F")
 elif form=='gif':
 	# For GIF
 	images = []
@@ -67,4 +68,4 @@ elif form=='gif':
 				im.thumbnail((dimImg[j][0],dimImg[j][1]))
 				new_im.paste(im, (x,y), im)
 		images.append(new_im)
-	images[0].save('output.gif', save_all=True, append_images=images[1:], optimize=False, duration=40, loop=0)
+	images[0].save(sys.argv[2], save_all=True, append_images=images[1:], optimize=False, duration=40, loop=0)

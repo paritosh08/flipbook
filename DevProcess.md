@@ -25,8 +25,7 @@ Output:
 ![Animated GIF](images/ezgif.com-gif-maker.gif)
 
 ## V2
-Added the functionality to choose between gif/pdf:
-The `.flip` code will be of following syntax:
+Added the functionality to choose between gif/pdf. The `.flip` code will be of following syntax:
 ```html
 <format gif/pdf>
 <Canvas size>
