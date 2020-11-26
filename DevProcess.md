@@ -10,8 +10,8 @@ Can parse the following format using python:
 .
 ```
 eg. for the following images and `.flip` code
-<img src="images/applePic.png" style="width: 40%; height: 40%;" alt="Apple image">
-<img src="images/isaac-newtonPic.png" width="40%" height="40%" alt="Isaac Newton">
+<img src="images/applePic.png" width="33" height="33" alt="Apple image">
+<img src="images/isaac-newtonPic.png" width="109" height="125" alt="Isaac Newton">
 ```
 500 500
 1 25 applePic.png 82 82 209 0 209 105
