@@ -27,6 +27,7 @@ Write a code and save with extension `.flip` (say `myBook.flip`)
     * `<final coordinate>` is the image's final coordinate following the same format as `<start coordinate>`.
 
 Now, run the following:
+
 **Windows**
 ```cmd
 flip myBook.flip -o flipbook.pdf
