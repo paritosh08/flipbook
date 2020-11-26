@@ -2,8 +2,8 @@ from fpdf import FPDF
 from PIL import Image
 
 f = open("book1.flip", "r")
+form = f.readline().strip()
 dimPg = [int(i) for i in f.readline().strip().split(" ")]
-pdf = FPDF('P', 'mm', (dimPg[0], dimPg[1]))
 pgs = []
 fName = []
 dimImg = []
@@ -17,6 +17,7 @@ for x in f:
 	src.append((int(tmp[5]),int(tmp[6])))
 	dest.append((int(tmp[7]),int(tmp[8])))
 f.close()
+
 mxPg = 0
 for pg in pgs:
 	if pg[1]>mxPg:
@@ -39,25 +40,31 @@ for i in range(len(fName)):
 		yS[i][j] = int(y)
 		x = x + stepX
 		y = y + stepY
-for i in range(mxPg):
-	for j in range(len(fName)):
-		print("(" + str(xS[j][i]) + "," + str(yS[j][i]) + ")", end=" ")
-	print("")
-for i in range(mxPg):
-	pdf.add_page()
-	for j in range(len(fName)):
-		if xS[j][i] != -1:
-			pdf.image(fName[j],xS[j][i],yS[j][i],dimImg[j][0],dimImg[j][1])
-pdf.output("output.pdf", "F")
-# imagelist = ['1.jpg', '17627495.jpg','pic.png']
-# x=0
-# y=0
-# w = 100
-# h =100
-# pdf.add_page()
-# for image in imagelist:
-# 	# imgPil = Image.open(image)
-# 	# w,h = imgPil.size
-# 	pdf.image(image,x,y,w,h)
-# 	y = y+h
-# pdf.output("yourfile.pdf", "F")
+# for i in range(mxPg):
+# 	for j in range(len(fName)):
+# 		print("(" + str(xS[j][i]) + "," + str(yS[j][i]) + ")", end=" ")
+# 	print("")
+
+if form=='pdf':
+	# For PDF
+	pdf = FPDF('P', 'mm', (dimPg[0], dimPg[1]))
+	for i in range(mxPg):
+		pdf.add_page()
+		for j in range(len(fName)):
+			if xS[j][i] != -1:
+				pdf.image(fName[j],xS[j][i],yS[j][i],dimImg[j][0],dimImg[j][1])
+	pdf.output("output.pdf", "F")
+elif form=='gif':
+	# For GIF
+	images = []
+	for i in range(mxPg):
+		new_im = Image.new('RGB', (dimPg[0], dimPg[1]))
+		for j in range(len(fName)):
+			if xS[j][i] != -1:
+				x = xS[j][i]
+				y = yS[j][i]
+				im = Image.open(fName[j])
+				im.thumbnail((dimImg[j][0],dimImg[j][1]))
+				new_im.paste(im, (x,y), im)
+		images.append(new_im)
+	images[0].save('output.gif', save_all=True, append_images=images[1:], optimize=False, duration=40, loop=0)
