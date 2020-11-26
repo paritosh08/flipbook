@@ -10,8 +10,8 @@ Can parse the following format using python:
 .
 ```
 eg. for the following images and `.flip` code
-![Apple image](images/applePic.png)
-![Isaac Newton](images/isaac-newtonPic.png)
+![Apple image](images/applePic.png =33x33)
+![Isaac Newton](images/isaac-newtonPic.png =109x125)
 ```
 500 500
 1 25 applePic.png 82 82 209 0 209 105
