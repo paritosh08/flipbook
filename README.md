@@ -10,7 +10,7 @@ installFlipbook
 ```
 **Linux/Ubuntu**
 ```sh
-./installFlipbook.sh
+sh installFlipbook.sh
 ```
 
 ### Using flipbook
@@ -32,4 +32,9 @@ Now, run the following:
 **Windows**
 ```cmd
 flip myBook.flip -o flipbook.pdf
+```
+
+**Linux**
+```cmd
+sh flip.sh myBook.flip -o flipbook.pdf
 ```
