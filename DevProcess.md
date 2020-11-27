@@ -47,5 +47,5 @@ Added the functionality to choose between gif/pdf. The `.flip` code will be of f
 * We can add option for rotation of the image as well.
 * We can optimise the size of the output gif and add option for selecting the background color.
 * We can also add support to gif images as input as well.
-* We can provide the functionality to create video as outpiut also.
-* Improve thr readability of the `flip` codes.
+* We can provide the functionality to create video as output also.
+* Improve the readability of the `flip` codes.
