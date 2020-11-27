@@ -3,8 +3,13 @@ Designing a language for describing flipbooks and implementing a compiler for th
 
 Checkout <a href="DevProcess.md">Development Process</a> too.
 
+### Dependencies
+Before proceeding further make sure you have the following installed:
+* Python 3.6 or above
+* pip
+
 ### Installation
-First install the dependencies.
+First install the dependencies (`Pillow` and `fpdf`).
 
 **Windows**
 ```cmd
