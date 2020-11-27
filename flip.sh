@@ -11,7 +11,7 @@ else
 		if [ -z "$outF" ]; then
 			echo Wrong arguments
 		else
-			if [ $flag=="-o" ; then
+			if [ $flag=="-o" ]; then
 				if ! command -v python
 				then
 					if ! command -v python3

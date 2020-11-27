@@ -1,6 +1,8 @@
 # flipbook
 Designing a language for describing flipbooks and implementing a compiler for this language that can convert a flipbook description into a printable pdf (or a video)
 
+Checkout <a href="DevProcess.md">Development Process</a> too.
+
 ### Installation
 First install the dependencies.
 

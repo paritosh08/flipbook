@@ -33,3 +33,19 @@ Added the functionality to choose between gif/pdf. The `.flip` code will be of f
 .
 .
 ```
+
+## Current functionalities
+* Can move one image from one location to another.
+* Can add multiple images and even overlap one over the another to create images.
+* Can produce pdf/gif as output.
+* Can change the frame size.
+* Can specify the dimention of the image to be used (i.e. no need to resize beforehand)
+
+## Future Implementations
+* We can have more options for transitions, i.e. more options can be added like `ease`, `linear`, `ease-in`, `ease-in-out`, etc.
+* We can add zooming effects as well (change dimension in each frame).
+* We can add option for rotation of the image as well.
+* We can optimise the size of the output gif and add option for selecting the background color.
+* We can also add support to gif images as input as well.
+* We can provide the functionality to create video as outpiut also.
+* Improve thr readability of the `flip` codes.
